@@ -22,10 +22,35 @@ public class Melody {
 
 
     public boolean addFile(String path, long start, long end){
-        return false;
+        try {
+            AudioInputStream audio = AudioSystem.getAudioInputStream(new File(path));
+            Clip clip = AudioSystem.getClip();
+            clip.open(audio);
+
+            map.put(clip, new long[]{start, end});
+
+            return true;
+        } catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
     }
     public boolean addFiles(String[] paths, long[] start, long[] end){
-        return false;
+        try {
+            int i = 0;
+            for(String path: paths) {
+                AudioInputStream audio = AudioSystem.getAudioInputStream(new File(path));
+                Clip clip = AudioSystem.getClip();
+                clip.open(audio);
+                map.put(clip, new long[]{start[i], end[i]});
+                i++;
+            }
+
+           return true;
+        } catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
     }
 
 }
