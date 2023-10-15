@@ -20,6 +20,9 @@ import java.util.Map;
 public class Melody {
     HashMap<Clip, long[]> map = new HashMap<>();
 
+    public boolean play(){
+        return false;
+    }
 
     public boolean addFile(String path, long start, long end){
         try {
@@ -53,4 +56,7 @@ public class Melody {
         }
     }
 
+    public int checkDuration(){
+        return 0;
+    }
 }

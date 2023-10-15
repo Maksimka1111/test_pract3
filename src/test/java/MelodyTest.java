@@ -20,4 +20,25 @@ public class MelodyTest {
 
         assertTrue(melody.addFiles(paths, start, end));
     }
+
+    @Test
+    public void CheckSuccessPlaying(){
+        String[] paths = {"C:/Users/makst/Downloads/audio.wav", "C:/Users/makst/Downloads/audio2.wav"};
+        long[] start = {0, 0};
+        long[] end = {3, 3};
+        melody.addFiles(paths, start, end);
+
+        assertTrue(melody.play());
+    }
+
+    @Test
+    public void CheckDurationOfFinalMelody() {
+        String[] paths = {"C:/Users/makst/Downloads/audio.wav", "C:/Users/makst/Downloads/audio2.wav"};
+        long[] start = {0, 0};
+        long[] end = {3, 3};
+        melody.addFiles(paths, start, end);
+        assertEquals(melody.checkDuration(), 6);
+    }
+
+
 }
