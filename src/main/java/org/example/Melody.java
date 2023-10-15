@@ -20,7 +20,12 @@ import java.util.Map;
 public class Melody {
     HashMap<Clip, long[]> map = new HashMap<>();
 
-    public static void main(String[] args) {
 
+    public boolean addFile(String path, long start, long end){
+        return false;
     }
+    public boolean addFiles(String[] paths, long[] start, long[] end){
+        return false;
+    }
+
 }
